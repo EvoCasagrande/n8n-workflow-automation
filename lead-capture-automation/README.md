@@ -14,7 +14,7 @@ Businesses that collect leads from website forms and want to automatically store
 
 ## Setup
 
-1. Import `workflow.json` into n8n
+1. Import `workflow1.json` into n8n
 2. Configure the required credentials
 3. Update environment variables
 4. Test the workflow
