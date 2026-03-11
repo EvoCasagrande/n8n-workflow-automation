@@ -1,1 +1,24 @@
+# environment variables
+.env
+.env.local
+.env.production
 
+# credentials
+credentials.json
+secrets.json
+*.key
+*.pem
+
+# node
+node_modules/
+
+# logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# editor
+.vscode/
+.idea/
