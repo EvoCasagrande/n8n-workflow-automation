@@ -1,0 +1,305 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "46245be0-34b9-4db9-8f64-730fe6e9f0dc",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "9088d6b3-59d7-46f5-abdb-dad645c4264a",
+      "name": "Webhook",
+      "webhookId": "46245be0-34b9-4db9-8f64-730fe6e9f0dc"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b0825f4e-4d94-44a9-8c79-501397a3873c",
+              "name": "Nombre",
+              "value": "={{ $json.query.dato1 }}",
+              "type": "string"
+            },
+            {
+              "id": "ade2dfaa-6f7e-4da7-889f-a81d61533e43",
+              "name": "Numero de pedido",
+              "value": "={{ $json.query.dato2 }}",
+              "type": "string"
+            },
+            {
+              "id": "84bc6d29-310f-4a9e-82ac-5d277ccc7158",
+              "name": "Fecha",
+              "value": "={{ $json.query.dato3 }}",
+              "type": "string"
+            },
+            {
+              "id": "37145674-d02e-4db9-b4ff-da486ffcf59d",
+              "name": "Producto / Servicio",
+              "value": "={{ $json.query.dato4 }}",
+              "type": "string"
+            },
+            {
+              "id": "7de890de-7c48-4bf6-9778-b84afe438ad9",
+              "name": "Precio",
+              "value": "={{ $json.query.dato5 }}",
+              "type": "number"
+            },
+            {
+              "id": "f30e5346-1725-4c7c-bc8d-61f30717f884",
+              "name": "Estado",
+              "value": "={{ $json.query.dato6 }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        160,
+        0
+      ],
+      "id": "1fcb7552-6f2a-4afb-840d-76941135e16d",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "13lnQunc-lbM7tcj1K9sUDwnuQK-6N7YZ3c2cWOQIAwU",
+          "mode": "list",
+          "cachedResultName": "Data base",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/13lnQunc-lbM7tcj1K9sUDwnuQK-6N7YZ3c2cWOQIAwU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/13lnQunc-lbM7tcj1K9sUDwnuQK-6N7YZ3c2cWOQIAwU/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nombre": "={{ $json.Nombre }}",
+            "Numero de pedido": "={{ $json['Numero de pedido'] }}",
+            "Fecha": "={{ $json.Fecha }}",
+            "Servicio": "={{ $json['Producto / Servicio'] }}",
+            "Total": "={{ $json.Precio }}",
+            "Estado": "={{ $json.Estado }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Numero de pedido",
+              "displayName": "Numero de pedido",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Servicio",
+              "displayName": "Servicio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Total",
+              "displayName": "Total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Estado",
+              "displayName": "Estado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        368,
+        -16
+      ],
+      "id": "bf6d6ecc-e630-40f1-baf3-cc02b2b224ea",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "E6sTuVXgDxNBmIZ3",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "casagrandeevo@gmail.com",
+        "subject": "Nuevo pedido!",
+        "message": "=<!DOCTYPE html> <html lang=\"es\"> <head>   <meta charset=\"UTF-8\" />   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />   <title>Nuevo pedido recibido</title> </head> <body style=\"margin:0; padding:0; background-color:#f4f4f4; font-family:Arial, Helvetica, sans-serif; color:#333333;\">   <table role=\"presentation\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" style=\"background-color:#f4f4f4; padding:30px 0;\">     <tr>       <td align=\"center\">         <table role=\"presentation\" width=\"600\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" style=\"width:600px; max-width:600px; background-color:#ffffff; border-radius:8px; overflow:hidden;\">                      <!-- Header -->           <tr>             <td style=\"background-color:#111827; padding:24px; text-align:center;\">               <h1 style=\"margin:0; font-size:24px; color:#ffffff;\">Nuevo pedido recibido</h1>             </td>           </tr>            <!-- Body -->           <tr>             <td style=\"padding:32px 24px;\">               <p style=\"margin:0 0 16px; font-size:16px; line-height:1.5;\">                 Hola <strong>{{ $json.Nombre }}</strong>,               </p>                <p style=\"margin:0 0 16px; font-size:16px; line-height:1.5;\">                 Recibimos tu pedido correctamente y ya lo estamos procesando.               </p>                <table role=\"presentation\" width=\"100%\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" style=\"border-collapse:collapse; margin:24px 0; background-color:#f9fafb; border:1px solid #e5e7eb; border-radius:6px;\">                 <tr>                   <td style=\"padding:12px 16px; border-bottom:1px solid #e5e7eb; font-size:14px;\">                     <strong>Número de pedido:</strong> {{ $json['Numero de pedido'] }}                    </td>                 </tr>                 <tr>                   <td style=\"padding:12px 16px; border-bottom:1px solid #e5e7eb; font-size:14px;\">                     <strong>Fecha:</strong> {{ $json.Fecha }}                   </td>                 </tr>                 <tr>                   <td style=\"padding:12px 16px; border-bottom:1px solid #e5e7eb; font-size:14px;\">                     <strong>Producto / servicio:</strong> {{ $json.Servicio }}                    </td>                 </tr>                 <tr>                   <td style=\"padding:12px 16px; border-bottom:1px solid #e5e7eb; font-size:14px;\">                     <strong>Total:</strong>  {{ $json.Total }}                  </td>                 </tr>                 <tr>                   <td style=\"padding:12px 16px; font-size:14px;\">                     <strong>Estado:</strong> {{ $json.Estado }}                   </td>                 </tr>               </table>                <p style=\"margin:0 0 16px; font-size:16px; line-height:1.5;\">                 Te avisaremos cuando haya una actualización sobre tu pedido.               </p>                <p style=\"margin:0 0 24px; font-size:16px; line-height:1.5;\">                 Si tenés alguna consulta, respondé a este correo o comunicate con nosotros.               </p>                <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\">                 <tr>                   <td style=\"border-radius:6px; background-color:#2563eb;\">                     <a href=\"{{link_pedido}}\" target=\"_blank\" style=\"display:inline-block; padding:12px 20px; font-size:14px; color:#ffffff; text-decoration:none; font-weight:bold;\">                       Ver pedido                     </a>                   </td>                 </tr>               </table>             </td>           </tr>            <!-- Footer -->           <tr>             <td style=\"padding:20px 24px; background-color:#f9fafb; border-top:1px solid #e5e7eb;\">               <p style=\"margin:0 0 8px; font-size:14px; color:#6b7280;\">                 <strong>{{nombre_empresa}}</strong>               </p>               <p style=\"margin:0; font-size:13px; color:#9ca3af;\">                 {{email_empresa}} · {{telefono_empresa}}               </p>             </td>           </tr>          </table>       </td>     </tr>   </table> </body> </html>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        576,
+        -16
+      ],
+      "id": "218f9099-7fa0-48ef-b6a4-6158f298ec0f",
+      "name": "Send a message",
+      "webhookId": "e3298758-0c9c-46a1-ba7f-c4d82780a961",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "LcIx5wISksg9Vtjn",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "evocasagrande.app.n8n.cloud",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-encoding": "gzip, br",
+            "accept-language": "es-US,es-419;q=0.9,es;q=0.8,en;q=0.7",
+            "cdn-loop": "cloudflare; loops=1; subreqs=1",
+            "cf-connecting-ip": "201.212.144.79",
+            "cf-ew-via": "15",
+            "cf-ipcountry": "AR",
+            "cf-ray": "9dad1504c828acf7-EZE",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "cf-worker": "n8n.cloud",
+            "cookie": "rl_page_init_referrer=RudderEncrypt%3AU2FsdGVkX1%2FIa%2FKtHpHbjLpyYCgxZpn9Ga1snVLH20s%3D; rl_page_init_referring_domain=RudderEncrypt%3AU2FsdGVkX1%2BUrvsjx%2BIbFP77lOTVMYcEZrM6X%2FZLAKI%3D; _ga=GA1.1.271919995.1773037919; _gcl_au=1.1.177476669.1773207871; _ga_0SC4FF2FH9=GS2.1.s1773257460$o4$g1$t1773257468$j52$l0$h0; rl_anonymous_id=RudderEncrypt%3AU2FsdGVkX19MGSjLu0qgUKDonVhfR3tDsIffEJVwDGJ8K04vFGHDpHyOofHo%2F%2FVq0OiD%2FgM37poksPCwlyEYIQ%3D%3D; rl_user_id=RudderEncrypt%3AU2FsdGVkX19vBKXHRmOXKABvrFGTeqTMFx2iGE%2BPPbgYDATnx6zwSlo1ind2Y1zoj0v9NzY3cIGo3DJShYs1X5BMSXzEaskUP0uB6xJCj9xKRpwohn5qyplW0wf7lO3Ys5Vy6thh5D7Cmb0S6LUjpMTikNii6t2FROX%2FO5Uqr8c%3D; rl_trait=RudderEncrypt%3AU2FsdGVkX1%2BksPgzaojje9pkn6Bi9HpEyrqFwULRSHs5zya12kMjxFBpz4yQ6NKjSnWHoSRXvBRF8lht5F17U%2FUiMGllgS6WnbHPQat%2BjweAPa2F361Lv6RGGAOH7ineu1Gq4nU%2FxB3gBq6dMwfiAnsK6AsGSQF9YUH4vUyv%2BKbOLcoExbnNWROvHRnrYolZE4BxsTo1m38iMV3ZN5pmLA%3D%3D; n8n_anonymous_id=35d2ee84-b936-4ec2-8242-d86b0a9c3ece; rl_session=RudderEncrypt%3AU2FsdGVkX1%2Bkmm4%2FvTEXScnC1%2BzagfHVA%2F2FLK0WLPZ97isR4jG0VkTQwgOhkMIqEGzg3xAwGUg4e12W8QlGECGY1l%2FZ5a32uqpTtBl6tRpggnzTv8STv7%2FoNw7XnQIs%2B7x5kQzZkayCZrmWMwG6Qw%3D%3D; ph_phc_4URIAm1uYfJO7j8kWSe0J8lc8IqnstRLS7Jx8NcakHo_posthog=%7B%22%24device_id%22%3A%22019cdb6e-db94-70bf-a74f-1595c116d675%22%2C%22distinct_id%22%3A%22cf57aaf0efeb38508c020d1183e8000700a5eae859aab0350f81787f1bb4eb8b%236d31cf08-ec05-4a78-8dbf-0df351b1cb58%22%2C%22%24sesid%22%3A%5B1773258560007%2C%22019cde61-b536-7de7-b944-d921f06a840e%22%2C1773257471270%5D%2C%22%24epp%22%3Atrue%2C%22%24initial_person_info%22%3A%7B%22r%22%3A%22%24direct%22%2C%22u%22%3A%22https%3A%2F%2Fevocasagrande.app.n8n.cloud%2Fworkflows%22%7D%2C%22%24user_state%22%3A%22identified%22%7D",
+            "priority": "u=0, i",
+            "sec-ch-ua": "\"Not:A-Brand\";v=\"99\", \"Google Chrome\";v=\"145\", \"Chromium\";v=\"145\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "sec-fetch-dest": "document",
+            "sec-fetch-mode": "navigate",
+            "sec-fetch-site": "none",
+            "sec-fetch-user": "?1",
+            "upgrade-insecure-requests": "1",
+            "x-forwarded-for": "201.212.144.79, 104.23.237.58",
+            "x-forwarded-host": "evocasagrande.app.n8n.cloud",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "traefik-prod-users-gwc-104-74495ff657-f56v7",
+            "x-is-trusted": "yes",
+            "x-real-ip": "201.212.144.79"
+          },
+          "params": {},
+          "query": {
+            "dato1": "evo",
+            "dato2": "102356",
+            "dato3": "11/03/2026",
+            "dato4": "Mercado Libre",
+            "dato5": "3500",
+            "dato6": "En preparación"
+          },
+          "body": {},
+          "webhookUrl": "https://evocasagrande.app.n8n.cloud/webhook-test/46245be0-34b9-4db9-8f64-730fe6e9f0dc",
+          "executionMode": "test"
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "51adafc7-21d8-4e03-a2d8-141f47e12011",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "cf57aaf0efeb38508c020d1183e8000700a5eae859aab0350f81787f1bb4eb8b"
+  },
+  "id": "fGbYpLKBMChNrd8Q",
+  "tags": []
+}
