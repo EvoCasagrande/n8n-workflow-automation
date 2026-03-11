@@ -59,3 +59,4 @@ Services include:
 Available for freelance automation projects.
 
 GitHub: https://github.com/EvoCasagrande
+Mail: casagrandeevo@gmail.com
