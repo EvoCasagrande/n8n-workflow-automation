@@ -1,28 +1,24 @@
 # Lead Capture Automation
 
 ## Overview
-This workflow captures new leads from a form submission using a webhook and automatically stores the data in Google Sheets while sending a notification email.
+This automation captures leads from a form submission and processes them automatically.
 
-## Workflow Steps
+The workflow receives form data via webhook, formats the information, stores it in Google Sheets and sends a notification email to the team.
+
+## Workflow
+
 1. Webhook receives form submission
-2. Lead data is processed
-3. Data is stored in Google Sheets
-4. Email notification is sent to the team
+2. Data is formatted using field mapping
+3. Lead information is stored in Google Sheets
+4. Notification email is sent automatically
 
 ## Use Case
-Businesses that collect leads from website forms and want to automatically store and notify their team about new prospects.
 
-## Setup
+Businesses that collect leads from website forms and want to automate lead storage and notifications.
 
-1. Import `workflow1.json` into n8n
-2. Configure the required credentials
-3. Update environment variables
-4. Test the workflow
-5. Activate it
+## Technologies
 
-## Files
-
-- workflow1.json → exported n8n workflow
-- screenshot.png → workflow diagram preview
-- .env.example → configuration example
-- credentials-template.md → required credentials guide
+- n8n
+- Webhooks
+- Google Sheets
+- Gmail
