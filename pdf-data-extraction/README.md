@@ -27,6 +27,9 @@ Automatically generates reports from your data and sends them via email on a sch
 - Email (SMTP / Gmail)
 - APIs / Databases
 
+## 📸 Workflow preview
+(See screenshot included in this repository)
+
 ## 📩 Want this for your business?
 I can customize this automation for your specific needs.  
 Contact me!
