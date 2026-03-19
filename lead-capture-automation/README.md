@@ -1,24 +1,35 @@
-# Lead Capture Automation
+# 🧲 Lead Capture Automation (n8n)
 
-## Overview
-This automation captures leads from a form submission and processes them automatically.
+## 🚀 What this automation does
+Automatically captures leads from forms or websites, stores them in Google Sheets, and sends instant notifications.
 
-The workflow receives form data via webhook, formats the information, stores it in Google Sheets and sends a notification email to the team.
+## ⚙️ How it works
+1. A user submits a form or triggers a webhook
+2. Lead data is captured automatically
+3. Data is stored in Google Sheets (or CRM)
+4. A notification email is sent instantly
 
-## Workflow
+## 💼 Business value
+- Never lose a potential customer
+- Eliminate manual data entry
+- Centralize all leads in one place
+- Respond faster to new inquiries
 
-1. Webhook receives form submission
-2. Data is formatted using field mapping
-3. Lead information is stored in Google Sheets
-4. Notification email is sent automatically
+## 🎯 Ideal for
+- Marketing agencies
+- Freelancers
+- Small businesses
+- Landing pages / funnels
 
-## Use Case
-
-Businesses that collect leads from website forms and want to automate lead storage and notifications.
-
-## Technologies
-
+## 🛠️ Tech stack
 - n8n
-- Webhooks
 - Google Sheets
-- Gmail
+- Webhooks
+- Email (Gmail / SMTP)
+
+## 📸 Workflow preview
+(See screenshot included in this repository)
+
+## 📩 Want this for your business?
+I can set up this automation for your business in less than 48 hours.  
+Contact me!
