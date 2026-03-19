@@ -29,4 +29,4 @@ Automatically generates reports from your data and sends them via email on a sch
 
 ## 📩 Want this for your business?
 I can customize this automation for your specific needs.  
-Contact me on Fiverr or send me a message.
+Contact me!
