@@ -1,24 +1,32 @@
-# PDF Data Extraction Automation
+# 📊 Automated Reporting Workflow (n8n)
 
-## Overview
-This workflow processes PDF files received via email and extracts relevant information automatically.
+## 🚀 What this automation does
+Automatically generates reports from your data and sends them via email on a scheduled basis — without manual work.
 
-The extracted data is then stored in a structured format for later use.
+## ⚙️ How it works
+1. A scheduled trigger starts the workflow
+2. Data is collected from external sources (APIs, databases, etc.)
+3. Data is processed and formatted
+4. A report is generated (HTML/PDF)
+5. The report is automatically sent via email
 
-## Workflow
+## 💼 Business value
+- Save hours of manual reporting every week
+- Eliminate repetitive tasks
+- Get consistent and error-free reports
+- Improve decision-making with timely data
 
-1. Email trigger receives a message with a PDF attachment
-2. The PDF document is processed
-3. Relevant data is extracted
-4. The extracted information is stored in a spreadsheet
+## 🎯 Ideal for
+- Businesses with recurring reports
+- Agencies
+- E-commerce analytics
+- Operations teams
 
-## Use Case
-
-Companies that receive invoices, reports or documents and want to automate data extraction.
-
-## Technologies
-
+## 🛠️ Tech stack
 - n8n
-- Email triggers
-- Document processing
-- Data automation
+- Email (SMTP / Gmail)
+- APIs / Databases
+
+## 📩 Want this for your business?
+I can customize this automation for your specific needs.  
+Contact me on Fiverr or send me a message.
