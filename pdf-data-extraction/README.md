@@ -1,35 +1,36 @@
-# 📊 Automated Reporting Workflow (n8n)
+# 📄 PDF Data Extraction Automation (n8n + AI)
 
 ## 🚀 What this automation does
-Automatically generates reports from your data and sends them via email on a scheduled basis — without manual work.
+Automatically extracts structured data from PDF documents (like invoices or reports) using AI and stores it in a database or spreadsheet.
 
 ## ⚙️ How it works
-1. A scheduled trigger starts the workflow
-2. Data is collected from external sources (APIs, databases, etc.)
-3. Data is processed and formatted
-4. A report is generated (HTML/PDF)
-5. The report is automatically sent via email
+1. A PDF file is uploaded or received
+2. The file is processed automatically
+3. AI extracts key data (names, totals, dates, etc.)
+4. Data is formatted into structured JSON
+5. Results are stored in Google Sheets or a database
 
 ## 💼 Business value
-- Save hours of manual reporting every week
-- Eliminate repetitive tasks
-- Get consistent and error-free reports
-- Improve decision-making with timely data
+- Save hours of manual data entry
+- Reduce human errors
+- Process large volumes of documents quickly
+- Automate invoice/report handling
 
 ## 🎯 Ideal for
-- Businesses with recurring reports
-- Agencies
-- E-commerce analytics
-- Operations teams
+- Accounting workflows
+- Finance teams
+- Admin processes
+- Businesses handling invoices or reports
 
 ## 🛠️ Tech stack
 - n8n
-- Email (SMTP / Gmail)
-- APIs / Databases
+- AI (OpenRouter / LLM)
+- Google Sheets / Database
+- File processing
 
 ## 📸 Workflow preview
 (See screenshot included in this repository)
 
 ## 📩 Want this for your business?
-I can customize this automation for your specific needs.  
-Contact me!
+I can build a custom PDF automation tailored to your workflow.  
+Contact me on Fiverr or send me a message.
