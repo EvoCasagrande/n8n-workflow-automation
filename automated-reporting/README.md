@@ -1,35 +1,66 @@
-# 📊 Automated Reporting Workflow (n8n)
+# 📄 Invoice Data Extraction Workflow (n8n)
 
 ## 🚀 What this automation does
-Automatically generates reports from your data and sends them via email on a scheduled basis — without manual work.
+
+Automatically processes supplier invoice PDFs, extracts key invoice data using AI, and saves the structured information into Google Sheets — reducing manual data entry and improving operational efficiency.
 
 ## ⚙️ How it works
-1. A scheduled trigger starts the workflow
-2. Data is collected from external sources (APIs, databases, etc.)
-3. Data is processed and formatted
-4. A report is generated (HTML/PDF)
-5. The report is automatically sent via email
+
+1. A new invoice PDF is uploaded to a Google Drive folder
+2. The workflow downloads the file and extracts the PDF text
+3. An IF condition checks whether the invoice requires OCR processing
+4. If OCR is needed, the file is converted and processed using AI vision/OCR
+5. If OCR is not needed, the extracted text is sent directly to OpenAI
+6. OpenAI extracts the relevant invoice information in a structured format
+7. The extracted data is validated and formatted using JavaScript nodes
+8. The information is appended automatically to Google Sheets
+9. The processed file is moved to the correct Google Drive folder
+10. Errors and exceptions are handled to avoid breaking the workflow
+
+## 🧠 Key features
+
+* Automatic invoice processing from PDF files
+* OCR and non-OCR processing paths
+* AI-powered data extraction with OpenAI
+* Conditional logic to handle different invoice formats
+* JavaScript data cleaning and formatting
+* Automatic Google Sheets integration
+* File organization in Google Drive
+* Error handling for failed or incomplete extractions
 
 ## 💼 Business value
-- Save hours of manual reporting every week
-- Eliminate repetitive tasks
-- Get consistent and error-free reports
-- Improve decision-making with timely data
+
+* Saves time on manual invoice data entry
+* Reduces human errors when copying invoice information
+* Centralizes supplier invoice data in Google Sheets
+* Improves control over received invoices
+* Makes accounting and administrative workflows faster
+* Allows the business to scale invoice processing without extra manual work
 
 ## 🎯 Ideal for
-- Businesses with recurring reports
-- Agencies
-- E-commerce analytics
-- Operations teams
 
-## 🛠️ Tech stack
-- n8n
-- Email (SMTP / Gmail)
-- APIs / Databases
+* Small and medium businesses
+* Accounting teams
+* Administrative departments
+* Companies that receive supplier invoices by PDF
+* Businesses that need structured invoice data in spreadsheets
 
-## 📸 Workflow preview
-(See screenshot included in this repository)
+## 🛠 Tech stack
+
+* n8n
+* Google Drive
+* Google Sheets
+* OpenAI
+* OCR processing
+* JavaScript
+* APIs / HTTP Requests
+
+## 🖼 Workflow preview
+
+See screenshot included in this repository.
 
 ## 📩 Want this for your business?
-I can customize this automation for your specific needs.  
-Contact me!
+
+I can build custom automation workflows to extract, process, validate, and organize business data from documents, emails, PDFs, CRMs, forms, and other sources.
+
+Contact me to discuss your automation needs.
